@@ -20,9 +20,13 @@ export function getExpandedHandsForBucket(obj: any, bucket: string) {
   const list = obj.hands[bucket];
   if (!list) return [];
   const acc = [];
-  for (const p of list) {
+  for (const p of list as string[]) {
     const expanded = expandPattern(p);
-    acc.push(...expanded);
+    if (Array.isArray(expanded)) {
+      (expanded as unknown as string[]).forEach((e: string) => acc.push(e as never));
+    } else if (typeof expanded === 'string') {
+      acc.push(expanded as never);
+    }
   }
-  return acc;
-}
+  return acc as unknown as string[];
+} 

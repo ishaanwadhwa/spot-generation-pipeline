@@ -7,7 +7,7 @@ function expandPairs(range: string) {
   if (range.includes("+")) {
     const base = range.replace("+", "");
     const start = RANKS.indexOf(base[0]);
-    const pairs = [];
+    const pairs: string[] = [];
     for (let i = start; i < RANKS.length; i++) {
       pairs.push(RANKS[i] + RANKS[i]);
     }
@@ -17,20 +17,19 @@ function expandPairs(range: string) {
     const [a, b] = range.split("-");
     const start = RANKS.indexOf(a[0]);
     const end = RANKS.indexOf(b[0]);
-    const pairs = [];
+    const pairs: string[] = [];
     for (let i = start; i <= end; i++) pairs.push(RANKS[i] + RANKS[i]);
     return pairs;
   }
   return [range];
 }
-
 function expandSuited(range: string) {
   // "A2s-A5s", "AJs", "A2s+"
   if (range.includes("+")) {
     const base = range.replace("+", "");
     const rank = base[1]; // e.g. AJs -> J
     const startIdx = RANKS.indexOf(rank);
-    const res = [];
+    const res: string[] = [];
     for (let i = startIdx; i >= 0; i--) {
       res.push("A" + RANKS[i] + "s");
     }
@@ -51,6 +50,7 @@ function expandSuited(range: string) {
   return [range];
 }
 
+
 export function expandPattern(pattern: string): string[] {
   // naive collector: check pairs, suited, offsuit
   if (pattern.includes("s") && pattern.length <= 3) {
@@ -65,3 +65,4 @@ export function expandPattern(pattern: string): string[] {
 
 // Example: expandPattern("22-99") -> ["22","33","44","55","66","77","88","99"]
 // Use this basic library to expand grouped keys into explicit arrays for sampling.
+
