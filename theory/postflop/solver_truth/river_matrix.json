@@ -1,2 +1,258 @@
-{}
-
+{
+    "schema_version": "1.0",
+    "generated_by": "assistant:starter-river-matrix-v1 (retuned_from_solver_truth_docs_river_matrix_md)",
+    "purpose": "Solver-approximation for river behavior retuned using theory/postflop/examples/solver_truth_docs/river_matrix.MD. Values are heuristic guidance (not solver exports).",
+    "sizingLegend": {
+      "20": "Small block (≈20%)",
+      "25": "Small (≈25%)",
+      "33": "Small/Standard (≈33%)",
+      "50": "Medium (≈50%)",
+      "66": "Medium-Large (≈66%)",
+      "75": "Large (≈75%)",
+      "100": "Overbet (≈100%+)"
+    },
+  
+    "river_classes": {
+      "blank_river": {
+        "label": "Blank / Brick River (no equity-changing card)",
+        "meta": {
+          "examples": ["A♣7♦2♠ → 6♣", "T♠5♣3♦ → 2♥"],
+          "notes": "Blank rivers preserve turn equities and encourage river polarization (clear value/bluff separation). When betting, larger sizing (≈66–75% or overbet) is common; small block bets appear with marginal value / pot-control incentives."
+        },
+        "ip": {
+          "bet_freq_qual": "medium-high",
+          "bet_freq_num": 0.60,
+          "preferred_sizings": [66, 75, 100],
+          "value_bet_freq_num": 0.82,
+          "bluff_freq_num": 0.18,
+          "raise_vs_bet_freq_num": 0.05,
+          "use_block_bet": true,
+          "block_bet_sizings": [20, 25]
+        },
+        "oop": {
+          "betting_first_freq_num": 0.10,
+          "checkraise_freq_num": 0.06,
+          "call_pref_num": 0.30,
+          "raise_as_bluff_candidates": [
+            "rare nut blockers",
+            "converted strong draws"
+          ]
+        }
+      },
+  
+      "overcard_river": {
+        "label": "River Brings an Overcard (A/K/Q/J)",
+        "meta": {
+          "examples": ["9♠7♦4♣ → A♥", "T♣8♣3♦ → K♠"],
+          "notes": "Overcard rivers are narrative-heavy and often polarizing. When the overcard favors IP's range composition, larger sizing (≈75%+ or overbet) becomes common; otherwise IP checks more and OOP may gain leading/probing incentives."
+        },
+        "ip": {
+          "bet_freq_qual": "high",
+          "bet_freq_num": 0.65,
+          "preferred_sizings": [75, 100],
+          "value_bet_freq_num": 0.88,
+          "bluff_freq_num": 0.12,
+          "raise_vs_bet_freq_num": 0.05,
+          "block_bet_use": false
+        },
+        "oop": {
+          "defensive_call_freq_num": 0.18,
+          "checkraise_freq_num": 0.10,
+          "raise_vs_bet_as_bluff_num": 0.05,
+          "call_pref_num": 0.24
+        }
+      },
+  
+      "pairing_river": {
+        "label": "River Pairs the Board (turn pairs → river pairs)",
+        "meta": {
+          "examples": ["Q♣7♦3♠ → 7♥ → 7♣", "8♣6♣2♦ → 2♣ → 2♥"],
+          "notes": "Pairing rivers increase showdown-value density and reduce incentives to run large bluffs. Small block bets (≈20–33%) and cautious value thresholds are common; large sizing is reserved for very strong hands."
+        },
+        "ip": {
+          "bet_freq_qual": "medium",
+          "bet_freq_num": 0.48,
+          "preferred_sizings": [20, 25, 33],
+          "value_bet_freq_num": 0.90,
+          "bluff_freq_num": 0.10,
+          "raise_vs_bet_freq_num": 0.06
+        },
+        "oop": {
+          "checkraise_freq_num": 0.14,
+          "call_pref_num": 0.34,
+          "raise_as_value_candidates": [
+            "full houses",
+            "trips",
+            "two-pair strong combos"
+          ]
+        }
+      },
+  
+      "fullhouse_river": {
+        "label": "River Creates / Completes Full House",
+        "meta": {
+          "examples": ["Q♣Q♦3♣ → Q♥", "7♥7♣2♦ → 7♠"],
+          "notes": "Board-pairing rivers that complete full houses create extreme polarity: very strong value hands and occasional blocker-driven bluffs. Large bets and overbets are common; medium-strength hands often check."
+        },
+        "ip": {
+          "bet_freq_qual": "very_high_when_strong",
+          "bet_freq_num": 0.62,
+          "preferred_sizings": [75, 100],
+          "value_bet_freq_num": 0.94,
+          "bluff_freq_num": 0.06,
+          "raise_vs_bet_freq_num": 0.10
+        },
+        "oop": {
+          "defensive_call_pref_num": 0.10,
+          "checkraise_vs_small_bet_num": 0.14,
+          "raise_as_semibluff_num": 0.03
+        }
+      },
+  
+      "straight_completer_river": {
+        "label": "River Completes Straight",
+        "meta": {
+          "examples": ["8♣6♣3♦ → 7♠", "T♠9♦4♣ → J♥"],
+          "notes": "Straight-completing rivers shift nut advantage and often compress medium holdings into bluff-catchers. Small block bets are common for thin value / pot-control; larger sizing appears when a player has clearer nut advantage."
+        },
+        "ip": {
+          "bet_freq_qual": "medium",
+          "bet_freq_num": 0.50,
+          "preferred_sizings": [20, 33, 50],
+          "value_bet_freq_num": 0.88,
+          "bluff_freq_num": 0.12,
+          "raise_vs_bet_freq_num": 0.08
+        },
+        "oop": {
+          "checkraise_freq_num": 0.16,
+          "raise_as_value_num": 0.16,
+          "call_pref_num": 0.36
+        }
+      },
+  
+      "flush_completer_river": {
+        "label": "River Completes Flush",
+        "meta": {
+          "examples": ["K♣9♣4♥ → 2♣", "A♦6♦3♣ → J♦"],
+          "notes": "Flush-completing rivers are highly polar. The flush-holder can value bet large; the non-flush player often checks or uses small blocks. Blockers (nut flush blocker) strongly influence bluff selection."
+        },
+        "ip": {
+          "bet_freq_qual": "medium",
+          "bet_freq_num": 0.55,
+          "preferred_sizings": [25, 75, 100],
+          "value_bet_freq_num": 0.90,
+          "bluff_freq_num": 0.10,
+          "raise_vs_bet_freq_num": 0.10
+        },
+        "oop": {
+          "checkraise_freq_num": 0.14,
+          "raise_as_value_num": 0.18,
+          "call_pref_num": 0.34
+        }
+      },
+  
+      "double_paired_river": {
+        "label": "River Creates a Double-Paired Board (two different pairs on board)",
+        "meta": {
+          "examples": ["8♣8♦4♠ → 4♥", "Q♣Q♦7♠ → 7♣"],
+          "notes": "Double-paired rivers are showdown-heavy and reduce bluff incentives. Small sizing (block/value) and checks dominate; raises are typically value and bluffs require exceptional blockers."
+        },
+        "ip": {
+          "bet_freq_qual": "low-medium",
+          "bet_freq_num": 0.45,
+          "preferred_sizings": [20, 25, 33],
+          "value_bet_freq_num": 0.92,
+          "bluff_freq_num": 0.08,
+          "raise_vs_bet_freq_num": 0.10
+        },
+        "oop": {
+          "checkraise_freq_num": 0.14,
+          "call_pref_num": 0.42,
+          "raise_value_candidates": [
+            "full houses",
+            "trips with strong kickers"
+          ]
+        }
+      },
+  
+      "counterfeited_river": {
+        "label": "Counterfeit / River Reduces Hand Strength (low card pairing an overcard)",
+        "meta": {
+          "examples": ["A♣K♦Q♠ → K♥ (counterfeiting AKx)"],
+          "notes": "Counterfeits reduce the strength of many one-pair hands and increase checking. When betting, small sizing is common; bluffing relies heavily on blockers and not blocking opponent's folding range."
+        },
+        "ip": {
+          "bet_freq_qual": "low",
+          "bet_freq_num": 0.30,
+          "preferred_sizings": [20, 25, 33],
+          "value_bet_freq_num": 0.80,
+          "bluff_freq_num": 0.20,
+          "raise_vs_bet_freq_num": 0.06
+        },
+        "oop": {
+          "checkraise_freq_num": 0.08,
+          "call_pref_num": 0.24,
+          "raise_as_bluff_candidates": [
+            "rare blockers",
+            "converted draws"
+          ]
+        }
+      },
+  
+      "dynamic_to_static_transition": {
+        "label": "Dynamic Flop/Turn → Static River (many draws miss and river is a brick)",
+        "meta": {
+          "examples": ["T♥9♦8♣ → 2♠ (river brick after many draws missed)"],
+          "notes": "When draws miss and the river is a brick, ranges re-polarize. IP often uses larger sizing to target bluff-catchers; bluffing frequency tends to be lower and more blocker-driven."
+        },
+        "ip": {
+          "bet_freq_qual": "medium-high",
+          "bet_freq_num": 0.62,
+          "preferred_sizings": [66, 75, 100],
+          "value_bet_freq_num": 0.9,
+          "bluff_freq_num": 0.08,
+          "raise_vs_bet_freq_num": 0.10
+        },
+        "oop": {
+          "checkraise_freq_num": 0.12,
+          "call_pref_num": 0.30
+        }
+      },
+  
+      "static_to_polarizing_transition": {
+        "label": "Static Flop/Turn → Polarizing River (river creates polarized textures)",
+        "meta": {
+          "examples": ["A♣7♦2♠ → J♠ (river creates possible straights/flushes)"],
+          "notes": "When a previously static runout becomes polarizing on the river (new straights/flushes/pairs appear), both ranges polarize and overbets become more common. Bluff selection should emphasize nut blockers."
+        },
+        "ip": {
+          "bet_freq_qual": "medium",
+          "bet_freq_num": 0.50,
+          "preferred_sizings": [75, 100],
+          "value_bet_freq_num": 0.80,
+          "bluff_freq_num": 0.20,
+          "raise_vs_bet_freq_num": 0.14
+        },
+        "oop": {
+          "checkraise_freq_num": 0.16,
+          "raise_as_bluff_num": 0.08,
+          "call_pref_num": 0.36
+        }
+      }
+    },
+  
+    "defaults": {
+      "fallback_bet_freq": 0.5,
+      "fallback_bluff_freq": 0.12,
+      "fallback_call_pref": 0.28,
+      "fallback_checkraise_freq": 0.14,
+      "fallback_sizings": [50, 75],
+      "notes": "If classification fails, fall back to these conservative values. Values are heuristic guidance (not solver exports) retuned from solver-truth documentation."
+    },
+  
+    "notes": {
+      "usage": "Numeric fields are provided for sampling by the SpotGenerator; qualitative fields (bet_freq_qual) are for explanation text and UI. Map sizingRefs to exact BB amounts using pot math and rounding rules. Keep 'meta.notes' for human/LLM explanation only; do not use meta.notes to make decisions.",
+      "next_steps": "If you later add node-specific matrices (e.g., SRP vs 3BP, IP vs OOP), keep the river class labels stable and override only the numeric fields per node."
+    }
+  }
+  

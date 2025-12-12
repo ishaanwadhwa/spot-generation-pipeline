@@ -1,2 +1,291 @@
-{}
-
+{
+    "schema_version": "1.1",
+    "generated_by": "assistant:starter-flop-matrix-v1 (retuned_from_solver_truth_docs_flop_matrix_md)",
+    "sizingLegend": {
+      "25": "Small (≈25%)",
+      "33": "Small/Standard (≈33%)",
+      "50": "Medium (≈50%)",
+      "66": "Medium-Large (≈66%)",
+      "75": "Large (≈75%)",
+      "100": "Overbet (≈100%+)"
+    },
+  
+    "board_classes": {
+      "dry_Axx_highcard": {
+        "label": "Dry Ace-high (Axx, rainbow, low connectivity)",
+        "meta": {
+          "board_type": "dry",
+          "examples": ["A♥7♦2♣", "A♠3♦9♣"],
+          "notes": "Despite IP range advantage, A-high boards see some of the lowest flop c-bet frequencies among high-card flops. Many AX and strong pairs are comfortable checking; when betting, prefer small sizing."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "medium",
+            "cbet_freq_num": 0.48,
+            "preferred_sizings": [25, 33],
+            "preferred_style": "rangebet_mixed",
+            "when_to_polarize_note": "Polarize more on dynamic turns; many showdownable hands check flop at meaningful frequency."
+          },
+          "oop": {
+            "checkraise_freq_qual": "low",
+            "checkraise_freq_num": 0.08,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "high",
+            "call_pref_num": 0.45
+          }
+        }
+      },
+  
+      "dry_Kxx_Qxx": {
+        "label": "Dry King/Queen-high (Kxx or Qxx, disconnected)",
+        "meta": {
+          "board_type": "dry_high",
+          "examples": ["K♣3♦2♠", "Q♥7♣2♦"],
+          "notes": "IP can bet frequently on dry K/Q-high boards. Compared to A-high, there's more incentive to deny equity from overcards and extract from worse pairs."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "high",
+            "cbet_freq_num": 0.70,
+            "preferred_sizings": [33, 50],
+            "preferred_style": "rangebet_mixed"
+          },
+          "oop": {
+            "checkraise_freq_qual": "low",
+            "checkraise_freq_num": 0.12,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "medium-high",
+            "call_pref_num": 0.40
+          }
+        }
+      },
+  
+      "low_disconnected": {
+        "label": "Low disconnected (e.g., 5-4-2, 7-3-2)",
+        "meta": {
+          "board_type": "low_disconnected",
+          "examples": ["5♦4♣2♠", "7♥3♦2♣"],
+          "notes": "IP often has a strong overpair advantage and can bet frequently. Larger sizing is common to deny equity from overcards and build pots with overpairs."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "high",
+            "cbet_freq_num": 0.82,
+            "preferred_sizings": [50, 66, 75],
+            "preferred_style": "wide_rangebet"
+          },
+          "oop": {
+            "checkraise_freq_qual": "very_low",
+            "checkraise_freq_num": 0.06,
+            "call_pref_qual": "medium",
+            "call_pref_num": 0.32
+          }
+        }
+      },
+  
+      "medium_connected": {
+        "label": "Medium connected (T98, 9T8, 8-7-6 types)",
+        "meta": {
+          "board_type": "semi_wet_connected",
+          "examples": ["T♦9♣8♠", "9♥8♦7♣"],
+          "notes": "Higher equity volatility reduces IP range-betting. IP tends to polarize more and size up to deny equity; OOP has more check-raises with value + strong draws."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "medium",
+            "cbet_freq_num": 0.55,
+            "preferred_sizings": [50, 66],
+            "preferred_style": "mixed_linear-polar"
+          },
+          "oop": {
+            "checkraise_freq_qual": "medium-high",
+            "checkraise_freq_num": 0.28,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "medium",
+            "call_pref_num": 0.42
+          }
+        }
+      },
+  
+      "wet_two_suited": {
+        "label": "Wet two-suited (two-tone with straight draws and flush draws present)",
+        "meta": {
+          "board_type": "wet",
+          "examples": ["9♥7♥6♦", "J♥T♥9♦"],
+          "notes": "Highly coordinated: IP c-bets less often and more selectively/polar. When betting, larger sizings are common to tax draws; OOP continues wide and raises more with value + combo draws."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "low-medium",
+            "cbet_freq_num": 0.42,
+            "preferred_sizings": [50, 66],
+            "preferred_style": "selective_polar"
+          },
+          "oop": {
+            "checkraise_freq_qual": "high",
+            "checkraise_freq_num": 0.30,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "high",
+            "call_pref_num": 0.52
+          }
+        }
+      },
+  
+      "monotone": {
+        "label": "Monotone (three cards same suit, high flush potential)",
+        "meta": {
+          "board_type": "monotone",
+          "examples": ["K♣8♣2♣", "A♦J♦7♦"],
+          "notes": "Monotone boards sharply reduce IP betting frequency and encourage small sizing when betting. Blockers matter; OOP tends to continue wide but pure XR frequency is not extreme."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "low",
+            "cbet_freq_num": 0.32,
+            "preferred_sizings": [25, 33],
+            "preferred_style": "polar_with_blocker_focus"
+          },
+          "oop": {
+            "checkraise_freq_qual": "low",
+            "checkraise_freq_num": 0.18,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "high",
+            "call_pref_num": 0.55
+          }
+        }
+      },
+  
+      "paired_board": {
+        "label": "Paired flop (e.g., Q-Q-3, 7-7-2)",
+        "meta": {
+          "board_type": "paired",
+          "examples": ["Q♠Q♦3♣", "7♥7♣2♦"],
+          "notes": "Paired boards typically see high IP betting frequency with small sizing (merged/range bet). OOP check-raises more frequently (value with trips/pairs + bluffs) than on most dry unpaired boards."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "high",
+            "cbet_freq_num": 0.72,
+            "preferred_sizings": [25, 33],
+            "preferred_style": "wide_rangebet_small"
+          },
+          "oop": {
+            "checkraise_freq_qual": "high",
+            "checkraise_freq_num": 0.32,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "medium",
+            "call_pref_num": 0.40
+          }
+        }
+      },
+  
+      "two_tone": {
+        "label": "Two-tone (two cards same suit; one off-suit card)",
+        "meta": {
+          "board_type": "two_tone",
+          "examples": ["K♥9♥4♣", "T♣7♣3♦"],
+          "notes": "Context-dependent. IP often uses mixed sizing based on whether value is built on overpairs vs top-pair and how many strong draws are available to OOP."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "medium",
+            "cbet_freq_num": 0.58,
+            "preferred_sizings": [33, 50, 66],
+            "preferred_style": "selective_rangebet"
+          },
+          "oop": {
+            "checkraise_freq_qual": "medium",
+            "checkraise_freq_num": 0.20,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "medium",
+            "call_pref_num": 0.44
+          }
+        }
+      },
+  
+      "rainbow_connected": {
+        "label": "Rainbow connected (connected but not suited)",
+        "meta": {
+          "board_type": "rainbow_connected",
+          "examples": ["J♦10♣9♠", "8♣7♦6♠"],
+          "notes": "Connected boards reduce pure range betting. IP bets a more selective range and often sizes up; OOP has more check-raises (value + straight draws)."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "medium",
+            "cbet_freq_num": 0.58,
+            "preferred_sizings": [50, 66],
+            "preferred_style": "mixed_linear-polar"
+          },
+          "oop": {
+            "checkraise_freq_qual": "medium-high",
+            "checkraise_freq_num": 0.26,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "high",
+            "call_pref_num": 0.46
+          }
+        }
+      },
+  
+      "static_texture": {
+        "label": "Static (textures that rarely improve: e.g., A-high rainbow with no draws)",
+        "meta": {
+          "board_type": "static",
+          "examples": ["A♠9♦4♣"],
+          "notes": "Static boards favor small sizing and wider betting ranges, but A-high static boards still retain higher check-back frequency than K/Q-high due to reduced protection value."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "high",
+            "cbet_freq_num": 0.70,
+            "preferred_sizings": [33],
+            "preferred_style": "rangebet_wide"
+          },
+          "oop": {
+            "checkraise_freq_qual": "low",
+            "checkraise_freq_num": 0.10,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "medium-high",
+            "call_pref_num": 0.44
+          }
+        }
+      },
+  
+      "dynamic_texture": {
+        "label": "Dynamic (textures that create many turn/river equities: wet/connected)",
+        "meta": {
+          "board_type": "dynamic",
+          "examples": ["9♥8♦7♣", "T♥9♦8♠"],
+          "notes": "Dynamic boards reduce IP c-bet frequency and increase polarization + sizing. OOP continues wide and check-raises more with value and semibluffs."
+        },
+        "flop": {
+          "ip": {
+            "cbet_freq_qual": "low-medium",
+            "cbet_freq_num": 0.50,
+            "preferred_sizings": [50, 66],
+            "preferred_style": "conditional_polar"
+          },
+          "oop": {
+            "checkraise_freq_qual": "medium-high",
+            "checkraise_freq_num": 0.28,
+            "checkraise_sizings": [50],
+            "call_pref_qual": "high",
+            "call_pref_num": 0.50
+          }
+        }
+      }
+    },
+  
+    "defaults": {
+      "fallback_cbet_freq": 0.5,
+      "fallback_checkraise_freq": 0.18,
+      "fallback_sizings": [33, 50],
+      "notes": "If board classification fails, use these fallback values. Values are heuristic guidance (not solver exports) retuned from solver-truth documentation."
+    },
+  
+    "notes": {
+      "conversion_guidance": "Use numeric frequencies for sampling (0..1) if needed. Use qual fields for UI/LLM explanation. Map sizingRefs to UI labels using sizingLegend (now includes 66). For OOP vs bet: call_pref_num is intended as 1 - fold - checkraise. When computing exact amounts later, apply spot pot math and round to nearest 0.5BB.",
+      "next_steps": "If you later add node-specific matrices (e.g., BTN vs BB SRP vs CO vs BB), keep the board class labels stable and override only the numeric fields per node."
+    }
+  }
+  

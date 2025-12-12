@@ -1,2 +1,250 @@
-{}
-
+{
+    "schema_version": "1.0",
+    "generated_by": "assistant:starter-turn-matrix-v1 (retuned_from_solver_truth_docs_turn_matrix_md)",
+    "notes": {
+      "purpose": "Approximate turn solver-truth for spot generation. Retuned using theory/postflop/examples/solver_truth_docs/turn_matrix.MD.",
+      "turn_role": "This file maps flop→turn transitions into preferred sizes, frequencies, and OOP/IP behavior."
+    },
+  
+    "sizingLegend": {
+      "25": "Small (≈25%)",
+      "33": "Small/Standard (≈33%)",
+      "50": "Medium (≈50%)",
+      "66": "Medium-Large (≈66%)",
+      "75": "Large (≈75%)",
+      "100": "Overbet (≈100%+)"
+    },
+  
+    "turn_classes": {
+  
+      "blank_turn": {
+        "label": "Brick/Blank Turn (low disconnected card: 2–6 not changing board)",
+        "meta": {
+          "examples": ["A♣7♦2♠ → 5♥", "K♠9♣3♦ → 4♣"],
+          "notes": "Bricks preserve flop ordering and typically favor bigger sizing with more polarized turn betting. Medium-strength hands check more; strong hands and committed bluffs drive most barrels."
+        },
+        "ip": {
+          "double_barrel_freq_qual": "medium-high",
+          "double_barrel_freq_num": 0.62,
+          "preferred_sizings": [66, 75, 100],
+          "barrel_style": "polarized_large",
+          "good_barrel_candidates": [
+            "2p+ / strong overpairs",
+            "hands that improved on turn",
+            "blocker-driven bluffs (straight/suit blockers)",
+            "high-equity draws that can continue on many rivers"
+          ],
+          "checkback_freq_num": 0.38
+        },
+        "oop": {
+          "probe_freq_qual": "low",
+          "probe_freq_num": 0.08,
+          "probe_sizings": [33, 50],
+          "checkraise_freq_qual": "low-medium",
+          "checkraise_freq_num": 0.18,
+          "checkraise_candidates": [
+            "two-pair+",
+            "strong combo draws",
+            "blocker bluffs (straight/suit blockers)"
+          ]
+        }
+      },
+  
+      "overcard_turn": {
+        "label": "Turn brings a high overcard (A/K/Q)",
+        "meta": {
+          "examples": ["9♠7♦4♣ → A♥", "T♣8♣3♦ → K♠"],
+          "notes": "Overcards can create strong narrative leverage. When favorable to the aggressor, large sizing becomes common; when unfavorable, IP checks more and uses smaller sizing with a narrower range."
+        },
+        "ip": {
+          "double_barrel_freq_qual": "high",
+          "double_barrel_freq_num": 0.78,
+          "preferred_sizings": [75, 100],
+          "barrel_style": "polar_heavy_large",
+          "good_barrel_candidates": [
+            "Ace/K blockers",
+            "improved backdoors",
+            "hands with nut advantage"
+          ],
+          "checkback_freq_num": 0.22
+        },
+        "oop": {
+          "probe_freq_qual": "very_low",
+          "probe_freq_num": 0.06,
+          "checkraise_freq_qual": "medium-high",
+          "checkraise_freq_num": 0.24,
+          "checkraise_candidates": [
+            "top pair turned strong",
+            "2p+",
+            "AK blockers for bluffs"
+          ]
+        }
+      },
+  
+      "straight_completer": {
+        "label": "Turn completes major straight draw (e.g., 9→T, 8→9)",
+        "meta": {
+          "examples": ["T♠9♦4♣ → J♥", "8♣6♣3♦ → 7♠"],
+          "notes": "Straight-completing turns shift nut advantage toward OOP more often than bricks/overcards. IP barrels less frequently and tends to use smaller sizing when betting; OOP check-raises more with value + semi-bluffs."
+        },
+        "ip": {
+          "double_barrel_freq_qual": "low-medium",
+          "double_barrel_freq_num": 0.35,
+          "preferred_sizings": [33, 50],
+          "barrel_style": "blocker_driven_small",
+          "good_barrel_candidates": [
+            "straight blockers",
+            "strong made hands",
+            "nut flush draws"
+          ],
+          "checkback_freq_num": 0.65
+        },
+        "oop": {
+          "probe_freq_qual": "medium-high",
+          "probe_freq_num": 0.24,
+          "probe_sizings": [33, 50],
+          "checkraise_freq_qual": "high",
+          "checkraise_freq_num": 0.38,
+          "checkraise_candidates": [
+            "straights",
+            "strong two-pair",
+            "combo draws with gutters"
+          ]
+        }
+      },
+  
+      "flush_completer": {
+        "label": "Turn completes a flush (two-tone flop → flush turn)",
+        "meta": {
+          "examples": ["K♣9♣4♥ → 2♣", "A♦6♦3♣ → J♦"],
+          "notes": "Flush-completing turns drastically cut IP's barreling frequency. When IP bets, small-to-medium sizing is typical; OOP check-raising is generally less frequent than on straight completers."
+        },
+        "ip": {
+          "double_barrel_freq_qual": "low",
+          "double_barrel_freq_num": 0.30,
+          "preferred_sizings": [25, 33, 50],
+          "barrel_style": "blocker_sensitive",
+          "good_barrel_candidates": [
+            "nut flush blockers",
+            "sets",
+            "two-pair with redraw"
+          ],
+          "checkback_freq_num": 0.70
+        },
+        "oop": {
+          "probe_freq_qual": "medium",
+          "probe_freq_num": 0.22,
+          "probe_sizings": [33, 50],
+          "checkraise_freq_qual": "low",
+          "checkraise_freq_num": 0.14,
+          "checkraise_candidates": [
+            "made flushes",
+            "strong draws converting to bluffs",
+            "top pair + high diamond"
+          ]
+        }
+      },
+  
+      "paired_turn": {
+        "label": "Turn pairs the board",
+        "meta": {
+          "examples": ["Q♣7♦3♠ → 7♥", "8♣6♣2♦ → 2♣"],
+          "notes": "Paired turns increase the density of made hands (trips/boats), often raising OOP check-raise incentives. IP typically uses small-to-medium sizing when betting."
+        },
+        "ip": {
+          "double_barrel_freq_qual": "medium",
+          "double_barrel_freq_num": 0.48,
+          "preferred_sizings": [33, 50, 66],
+          "barrel_style": "mixed_merged",
+          "good_barrel_candidates": [
+            "overpairs",
+            "top pairs",
+            "improved BDFDs"
+          ],
+          "checkback_freq_num": 0.52
+        },
+        "oop": {
+          "probe_freq_qual": "low-medium",
+          "probe_freq_num": 0.16,
+          "checkraise_freq_qual": "high",
+          "checkraise_freq_num": 0.40,
+          "checkraise_candidates": [
+            "trips",
+            "boat redraws",
+            "blocker bluffs"
+          ]
+        }
+      },
+  
+      "brick_dynamic_split": {
+        "label": "Brick turn on dynamic flop (e.g., straight-completing flop but brick turn)",
+        "meta": {
+          "examples": ["T♠9♣8♥ → 2♦", "J♣8♣7♦ → 4♠"],
+          "notes": "After dynamic flops, even a brick turn can keep equities volatile (many draws/pairs persist). IP barrels with a more polar range and typically sizes up; OOP's check-raise incentives remain meaningful."
+        },
+        "ip": {
+          "double_barrel_freq_qual": "medium",
+          "double_barrel_freq_num": 0.55,
+          "preferred_sizings": [66, 75],
+          "barrel_style": "polar_pressure",
+          "good_barrel_candidates": [
+            "combo draws",
+            "overcards to top pair",
+            "backdoor flushes"
+          ],
+          "checkback_freq_num": 0.45
+        },
+        "oop": {
+          "probe_freq_qual": "medium",
+          "probe_freq_num": 0.18,
+          "checkraise_freq_qual": "medium-high",
+          "checkraise_freq_num": 0.24,
+          "checkraise_candidates": [
+            "top two-pair sets",
+            "straight redraws",
+            "high-equity bluffs"
+          ]
+        }
+      },
+  
+      "two_flush_turn": {
+        "label": "Turn creates two-flush (rainbow flop → 2-suited turn)",
+        "meta": {
+          "examples": ["K♣9♦4♠ → T♣", "A♠7♦2♥ → 3♥"],
+          "notes": "Creating a new flush draw increases bluffing incentives (blockers matter) and can raise OOP aggression compared to fully rainbow runouts. Sizing is usually small-to-medium with relatively merged ranges."
+        },
+        "ip": {
+          "double_barrel_freq_qual": "medium",
+          "double_barrel_freq_num": 0.56,
+          "preferred_sizings": [25, 33, 50],
+          "barrel_style": "mixed",
+          "good_barrel_candidates": [
+            "flush blockers",
+            "strong draws",
+            "top pair"
+          ],
+          "checkback_freq_num": 0.44
+        },
+        "oop": {
+          "probe_freq_qual": "medium",
+          "probe_freq_num": 0.22,
+          "checkraise_freq_qual": "medium",
+          "checkraise_freq_num": 0.18,
+          "checkraise_candidates": [
+            "two-pair+",
+            "backdoor-flush-improving hands",
+            "gutshot + high flush blocker"
+          ]
+        }
+      }
+    },
+  
+    "defaults": {
+      "fallback_double_barrel_freq": 0.5,
+      "fallback_probe_freq": 0.12,
+      "fallback_checkraise_freq": 0.20,
+      "fallback_sizings": [50, 66],
+      "notes": "Used if board classification fails. Values are heuristic guidance (not solver exports) retuned from solver-truth documentation."
+    }
+  }
+  
