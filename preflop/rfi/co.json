@@ -1,0 +1,12 @@
+{
+    "position": "co",
+    "description": "Cutoff opens wide — many more suited connectors and weaker aces (~28-36% depending on meta).",
+    "theory": "CO leverages position; opens suited one-gappers, broadways and more speculative hands.",
+    "hands": {
+      "pairs": ["66+", "77+", "88+", "99+", "TT+", "JJ+", "QQ+", "KK", "AA"],
+      "suited": ["A5s+", "K9s+", "Q9s+", "J9s+", "T8s+", "98s", "87s", "76s", "65s"],
+      "offsuit": ["ATo+", "KTo+", "QTo+", "JTo"],
+      "notes": "CO includes many connectors and weak aces compared to mp/utg."
+    }
+  }
+  

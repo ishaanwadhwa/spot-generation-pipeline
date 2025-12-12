@@ -1,0 +1,12 @@
+{
+    "matchup": "bb_vs_co",
+    "description": "BB vs Cutoff open — slightly tighter than vs BTN; more calls vs CO aggression.",
+    "theory": "CO opens a bit tighter; BB still uses small 3bets but includes some polarized responses vs earlier openers.",
+    "hands": {
+      "3bet_small": ["QQ","JJ","TT","AQs","AJs","KQs"],
+      "3bet_big": ["AA","KK","AKs","A5s"],
+      "call": ["22-99","A2s-A6s","KTs-KQs","QTs-QJs","JTs","T9s","98s"],
+      "fold": ["72o","84o","93o","52o"]
+    }
+  }
+  

@@ -1,0 +1,14 @@
+{
+    "purpose": "How to expand shorthand to explicit canonical hands (169 classes -> 1326 combos)",
+    "ranks": ["A","K","Q","J","T","9","8","7","6","5","4","3","2"],
+    "rules": [
+      "Pairs: '22-99' expands to 22,33,...,99. '22+' expands to 22..AA.",
+      "Suited: 'A2s-A5s' expands A2s,A3s,A4s,A5s.",
+      "Offsuit: 'KTo+' expands KTo,KJo,KQo,KAo etc (higher offsuit combos in lexicographic order).",
+      "Single entries like 'AJs' or 'JTs' represent that canonical hand class.",
+      "When parser expands into concrete combos for simulation, use 4 combos for suited (AhKh, AsKs etc) and 12 for offsuit.",
+      "If a key maps to 'limp', treat it as a candidate SB limp; generator may convert limp->raise according to meta rules."
+    ],
+    "note": "Use the provided tools/expandRanges.ts to reliably expand shorthand at runtime."
+  }
+  

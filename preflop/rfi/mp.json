@@ -1,0 +1,12 @@
+{
+    "position": "mp",
+    "description": "MP opens wider than utg but still reasonably tight (~18-22%).",
+    "theory": "MP widens slightly, adding more suited connectors and weaker aces.",
+    "hands": {
+      "pairs": ["77+", "88+", "99+", "TT+", "JJ+", "QQ+", "KK", "AA"],
+      "suited": ["A9s+", "KTs+", "QTs+", "JTs", "T9s", "98s"],
+      "offsuit": ["AJo+", "KQo", "QJo"],
+      "notes": "Includes additional suited connectors and A9s+ compared to utg."
+    }
+  }
+  

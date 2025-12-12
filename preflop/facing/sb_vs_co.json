@@ -1,0 +1,12 @@
+{
+    "matchup": "sb_vs_co",
+    "description": "SB vs CO open — slightly tighter than vs BTN; mixes small and big 3bets.",
+    "theory": "CO opens are stronger than BTN; SB defends with more selectiveness. Polar bluffs in 3bet_big are included but less frequent than vs BTN.",
+    "hands": {
+      "3bet_small": ["QQ","JJ","TT","AQs","AJs"],
+      "3bet_big": ["AA","KK","AKs","A5s"],
+      "call": ["22-77","A2s-A4s","KQs","QJs","JTs","T9s"],
+      "fold": ["72o","82o"]
+    }
+  }
+  

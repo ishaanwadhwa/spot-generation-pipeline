@@ -1,0 +1,12 @@
+{
+    "matchup": "bb_vs_mp",
+    "description": "BB vs MP open — earlier opener so more polarized defense and slightly larger 3bets.",
+    "theory": "MP opens tighter; BB 3bets more polar (3bet_big includes premium values and selective suited bluffs).",
+    "hands": {
+      "3bet_small": ["QQ","JJ","AQs","AJs"],
+      "3bet_big": ["AA","KK","AKs","A5s","K5s"],
+      "call": ["33-88","A2s-A5s","KQs","QJs","JTs","T9s"],
+      "fold": ["72o","92o","J4o"]
+    }
+  }
+  

@@ -1,0 +1,12 @@
+{
+    "matchup": "bb_vs_btn",
+    "description": "Big blind defending vs button open: generally linear defense (3bet_small + calls).",
+    "theory": "BTN opens wide; BB defends with both calls and small 3bets to exploit dominated broadways. Use small sizes to encourage calls from worse hands.",
+    "hands": {
+      "3bet_small": ["QQ","JJ","TT","AQs","AJs","KQs","AKs"],
+      "3bet_big": ["AA","KK","AKs"],
+      "call": ["22-99","A2s-A5s","KTs-KQs","QTs-QJs","JTs","T9s","98s"],
+      "fold": ["72o","93o","J4o","32o"]
+    }
+  }
+  

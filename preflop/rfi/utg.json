@@ -1,0 +1,12 @@
+{
+    "position": "utg",
+    "description": "UTG open (tight RFI) — conservative, ~15-18% RFI in 6-max.",
+    "theory": "UTG is first to act; keep a relatively tight, strong opening range. Favor high pairs, strong suited aces, and top broadways.",
+    "hands": {
+      "pairs": ["88+", "99+", "TT+", "JJ+", "QQ+", "KK", "AA"],
+      "suited": ["AJs+", "KQs", "QJs", "JTs"],
+      "offsuit": ["AQo+", "KQo"],
+      "notes": "Pattern shorthand: pairs 88+, AJs+, AQo+."
+    }
+  }
+  

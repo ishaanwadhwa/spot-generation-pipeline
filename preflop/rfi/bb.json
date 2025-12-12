@@ -1,0 +1,7 @@
+{
+    "position": "bb",
+    "description": "Big blind rarely RFI. Keep empty or minimal.",
+    "hands": {},
+    "notes": "BB is defender position primarily; RFI not used in standard 6-max model."
+  }
+  

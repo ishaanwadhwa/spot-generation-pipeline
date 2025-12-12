@@ -1,0 +1,11 @@
+{
+    "design_philosophy": "Ranges encode modern GTO heuristics tuned for 6-max cash (100bb). We prefer clarity over micro-frequency noise in the data files. The generator uses these ranges to sample realistic preflop combos; postflop trees will be built informed by these preflop distributions.",
+    "3bet_assignment_rules": [
+      "Use 3bet_small when defender faces a wide opener and wants linear 3b frequency to get value (e.g., bb vs btn).",
+      "Use 3bet_big when defender faces a tighter opener or when the defender's stack/situation favors polarization (e.g., sb vs btn, co vs utg).",
+      "3bet_big includes premium values + solver-style suited bluffs (A2s-A5s, K4s-K5s etc.) in order to maintain balance and blockers.",
+      "SB limps are included to model population tendencies and realistic low-SPR realization lines; limps should be sampled only for sb during special generation modes."
+    ],
+    "usage_notes": "Cursor or the SpotGenerator must respect theory.json: it is the authoritative mapping from positional matchup -> sizing-class semantics. Do not reassign 3bet_small/3bet_big semantics arbitrarily."
+  }
+  

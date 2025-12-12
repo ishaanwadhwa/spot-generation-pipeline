@@ -1,0 +1,27 @@
+{
+    "matchup": "mp_vs_utg",
+    "description": "MP defending vs UTG — HJ vs LJ in solver terms.",
+    "theory": "MP defends tightly vs UTG; small 3bets for strong broadways, big 3bets for premiums + suited blocker bluffs.",
+    "hands": {
+      "3bet_small": [
+        "QQ", "JJ",
+        "AQs", "AJs",
+        "KQs"
+      ],
+      "3bet_big": [
+        "AA", "KK", "AKs",
+        "A5s"
+      ],
+      "call": [
+        "22-99",
+        "ATs-AQs",
+        "KTs-KQs",
+        "QTs-QJs",
+        "JTs"
+      ],
+      "fold": [
+        "72o", "82o", "93o"
+      ]
+    }
+  }
+  

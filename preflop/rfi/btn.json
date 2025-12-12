@@ -1,0 +1,12 @@
+{
+    "position": "btn",
+    "description": "Button opens widest — positional leverage; ~40-55% RFI depending on aggression.",
+    "theory": "BTN should open very wide; include suited garbage that plays well with position and postflop SPR advantages.",
+    "hands": {
+      "pairs": ["22+", "33+", "44+", "55+", "66+", "77+", "88+", "99+", "TT+", "JJ+", "QQ+", "KK", "AA"],
+      "suited": ["A2s+", "K2s+", "Q2s+", "J2s+", "T2s+", "98s", "87s", "76s", "65s", "54s"],
+      "offsuit": ["A2o+", "K9o+", "Q9o+", "J9o+", "T9o", "98o"],
+      "notes": "BTN includes wide suited connectors and many off-suit broadways."
+    }
+  }
+  

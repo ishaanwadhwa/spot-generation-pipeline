@@ -1,0 +1,10 @@
+{
+    "linear_range": "A 3bet composition that targets dominated hands; often small sizing.",
+    "polar_range": "A 3bet composition of strong values plus bluffs.",
+    "3bet_small": "Small 3-bet sizing class (used for linear constructions).",
+    "3bet_big": "Large 3-bet sizing class (used for polarized constructions and OOP seats).",
+    "RFI": "Raise First In (open-raise when folded to).",
+    "limp": "To call the big blind preflop (SB often uses limps for equity realization).",
+    "SPR": "Stack-to-pot ratio. Low SPR increases incentive for polar sizing."
+  }
+  

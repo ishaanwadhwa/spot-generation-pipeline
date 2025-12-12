@@ -1,0 +1,12 @@
+{
+    "position": "sb",
+    "description": "Small blind opens — mixed raise & limp strategies. SB often play polarized raises and limp speculative hands.",
+    "theory": "SB is OOP; mixes raises for strong value and limps for equity realization / disguised ranges.",
+    "hands": {
+      "raise": ["77+", "88+", "99+", "TT+", "JJ+", "QQ+", "KK", "AA", "AKs", "AQs", "AJs", "KQs", "KJs", "QJs"],
+      "limp": ["A2s-A5s", "22-66", "76s", "65s", "54s", "T2s-T8s"],
+      "offsuit": ["AJo+", "KTo+", "QTo+"],
+      "notes": "SB raises strong hands and premium broadways; limps are used to realize equity OOP with small pairs and suited connectors."
+    }
+  }
+  

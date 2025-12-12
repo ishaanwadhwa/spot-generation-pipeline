@@ -1,0 +1,28 @@
+{
+    "matchup": "co_vs_utg",
+    "description": "CO defending vs UTG — CO uses tighter linear 3bet_small and selective bluff 3bet_big.",
+    "theory": "UTG range is very strong; CO defends tightly with broadways and medium pairs, using small 3bets for linear value and large 3bets for premiums + suited bluff aces.",
+    "hands": {
+      "3bet_small": [
+        "QQ", "JJ", "TT",
+        "AQs", "AJs",
+        "KQs"
+      ],
+      "3bet_big": [
+        "AA", "KK", "AKs",
+        "A5s"
+      ],
+      "call": [
+        "22-99",
+        "A9s-AJs",
+        "KTs-KQs",
+        "QTs-QJs",
+        "JTs",
+        "T9s"
+      ],
+      "fold": [
+        "72o", "84o", "93o", "T3o"
+      ]
+    }
+  }
+  

@@ -1,0 +1,12 @@
+{
+    "matchup": "sb_vs_btn",
+    "description": "SB defending vs BTN open: SB uses polarized 3bets often, plus limps/calls.",
+    "theory": "SB is OOP vs BTN; many 3bets are polarized (big) and include suited bluffs to balance value. Limping is also used preflop to realize equity with small pairs.",
+    "hands": {
+      "3bet_small": ["QQ","JJ","TT","AQs","AJs"],
+      "3bet_big": ["AA","KK","AKs","A5s","K5s","Q5s"],
+      "call": ["22-99","A2s-A5s","KTs-KQs","QTs-QJs","JTs"],
+      "fold": ["72o","J3o","94o"]
+    }
+  }
+  

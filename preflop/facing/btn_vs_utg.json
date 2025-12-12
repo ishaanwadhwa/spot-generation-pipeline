@@ -1,0 +1,29 @@
+{
+    "matchup": "btn_vs_utg",
+    "description": "Button defending vs UTG (LJ) open — tight opener, BTN uses polarized 3B-big and linear 3B-small.",
+    "theory": "UTG is the tightest RFI. BTN defends mostly by calling suited broadways and pairs, mixing linear 3bet_small for dominated broadways and polarized 3bet_big for premiums + suited bluff aces.",
+    "hands": {
+      "3bet_small": [
+        "QQ", "JJ", "TT",
+        "AQs", "AJs",
+        "KQs"
+      ],
+      "3bet_big": [
+        "AA", "KK", "AKs",
+        "A5s", "A4s"
+      ],
+      "call": [
+        "22-99",
+        "ATs-A2s",
+        "KTs-KQs",
+        "QTs-QJs",
+        "JTs",
+        "T9s",
+        "98s"
+      ],
+      "fold": [
+        "72o", "83o", "94o", "T4o", "J3o"
+      ]
+    }
+  }
+  

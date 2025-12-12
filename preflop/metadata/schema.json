@@ -1,0 +1,10 @@
+{
+    "version": "1.0",
+    "format": "preflop-modular-v1",
+    "positions": ["utg","mp","co","btn","sb","bb"],
+    "matchupKeys": "use lowercase with underscore, e.g. bb_vs_btn, sb_vs_co",
+    "handNotation": "Pairs: '22'..'AA'. Suited: 'A2s'. Offsuit: 'KTo'. Shorthand ranges use '-' and '+' and ranges like 'A2s-A5s', '22-99', 'KTo+'",
+    "3betNaming": { "small": "3bet_small", "big": "3bet_big" },
+    "description": "Modular preflop engine for 6-max cash (100bb, no antes). RFI files describe opening ranges per position. Facing files describe defender buckets vs an open (3bet_small/3bet_big/call/fold). SB files may include limps."
+  }
+  

@@ -1,0 +1,28 @@
+{
+    "matchup": "btn_vs_co",
+    "description": "Button defending vs CO — CO opens wide; BTN responds with linear 3bet_small and occasional polarized 3bet_big.",
+    "theory": "CO’s range is wide, so BTN 3bets more frequently for value with linear 3bet_small. Polar 3bet_big includes suited wheel aces and Kxs bluffs.",
+    "hands": {
+      "3bet_small": [
+        "JJ", "TT", "99",
+        "AQs", "AJs", "ATs",
+        "KQs", "KJs"
+      ],
+      "3bet_big": [
+        "QQ", "KK", "AA", "AKs",
+        "A5s", "A4s", "K5s"
+      ],
+      "call": [
+        "22-88",
+        "A2s-A9s",
+        "KTs-KQs",
+        "QTs-QJs",
+        "JTs",
+        "T9s", "98s", "87s"
+      ],
+      "fold": [
+        "72o", "62o", "J3o", "T4o"
+      ]
+    }
+  }
+  
