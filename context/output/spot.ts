@@ -119,16 +119,23 @@ export interface VillainStats {
   }
   
   // ------------------------
-  // DATABASE SPOT WRAPPER
+  // GENERATED OUTPUT (LLM / Spot Generator)
   // ------------------------
-  
-  export interface Spot {
+  // This is the JSON shape Cursor should output when asked to "generate a spot".
+  // It intentionally does NOT include DB timestamp fields.
+  export interface SpotOutput {
     id: string;
     fmt: string;
     str: string;
-    difficulty: number | null;
+    difficulty: number; // 1–10
     tags: string[];
     data: SpotData;
+  }
+
+  // ------------------------
+  // DATABASE SPOT RECORD (storage layer)
+  // ------------------------
+  export interface SpotRecord extends SpotOutput {
     createdAt: Date;
     updatedAt: Date;
   }

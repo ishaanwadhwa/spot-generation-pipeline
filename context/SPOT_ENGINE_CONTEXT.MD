@@ -77,7 +77,7 @@ Every generated spot MUST follow this structure exactly:
 ### **Strict Rules**
 
 * `exactAmount` must always be present.
-* Sizing must be **rounded to nearest 0.5** for animation/UI.
+* `exactAmount` is **exact math** (unrounded). UI/animation may round for display.
 * All non-participating seats must fold explicitly in `hist`.
 * Only **valid solver-style lines** permitted.
 
