@@ -1,0 +1,315 @@
+============================================================
+Spot Generation Log - 2025-12-13T11:49:04.429Z
+============================================================
+
+Starting generation of 12 spots (type: srp_btn_bb_turn)
+Start ID: s508, Seed base: 100000
+
+------------------------------------------------------------
+SPOT: s508
+------------------------------------------------------------
+  Seed: 100000
+  Attempts: 1
+
+  Hero: 7s 7c
+  Board: 7h 3d 2c 5h
+
+  Classifications:
+    heroClass:  monster
+    handIntent: made_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 33% | bet 50%
+  Frequencies: 0.45 | 0.40 | 0.15
+  Best: index 2
+
+  Difficulty: 6
+  Concepts: value-max, bet-sizing, range-advantage
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s509
+------------------------------------------------------------
+  Seed: 100001
+  Attempts: 1
+
+  Hero: 5s 4s
+  Board: 7h 3d 2c 4d
+
+  Classifications:
+    heroClass:  medium
+    handIntent: thin_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 50% | bet 75%
+  Frequencies: 0.50 | 0.35 | 0.15
+  Best: index 1
+
+  Difficulty: 7
+  Concepts: protection-bet
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s510
+------------------------------------------------------------
+  Seed: 100002
+  Attempts: 1
+
+  Hero: 2h 2d
+  Board: 9d 4c 2s 6c
+
+  Classifications:
+    heroClass:  monster
+    handIntent: made_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 33% | bet 50%
+  Frequencies: 0.45 | 0.40 | 0.15
+  Best: index 2
+
+  Difficulty: 6
+  Concepts: value-max, bet-sizing, range-advantage
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s511
+------------------------------------------------------------
+  Seed: 100003
+  Attempts: 1
+
+  Hero: As 4s
+  Board: 7h 3d 2c 4d
+
+  Classifications:
+    heroClass:  medium
+    handIntent: thin_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 25% | bet 33%
+  Frequencies: 0.50 | 0.35 | 0.15
+  Best: index 2
+
+  Difficulty: 7
+  Concepts: protection-bet
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s512
+------------------------------------------------------------
+  Seed: 100004
+  Attempts: 1
+
+  Hero: Jc 6c
+  Board: 8c 5d 2h 4d
+
+  Classifications:
+    heroClass:  air
+    handIntent: draw
+    turnType:   straight_completer
+    nodeIntent: pressure
+
+  Options: check | bet 50% | bet 75%
+  Frequencies: 0.30 | 0.50 | 0.20
+  Best: index 1
+
+  Difficulty: 7
+  Concepts: barrel-geometry
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s513
+------------------------------------------------------------
+  Seed: 100005
+  Attempts: 1
+
+  Hero: Ad 3d
+  Board: 8c 5d 2h 4d
+
+  Classifications:
+    heroClass:  monster
+    handIntent: made_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 33% | bet 50%
+  Frequencies: 0.45 | 0.40 | 0.15
+  Best: index 2
+
+  Difficulty: 6
+  Concepts: value-max, bet-sizing, range-advantage
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s514
+------------------------------------------------------------
+  Seed: 100006
+  Attempts: 1
+
+  Hero: Qc 3c
+  Board: 7h 3d 2c 6c
+
+  Classifications:
+    heroClass:  medium
+    handIntent: thin_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 25% | bet 33%
+  Frequencies: 0.50 | 0.35 | 0.15
+  Best: index 2
+
+  Difficulty: 7
+  Concepts: protection-bet
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s515
+------------------------------------------------------------
+  Seed: 100007
+  Attempts: 1
+
+  Hero: As 9s
+  Board: 9d 4c 2s 3s
+
+  Classifications:
+    heroClass:  strong_value
+    handIntent: made_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 33% | bet 50%
+  Frequencies: 0.45 | 0.40 | 0.15
+  Best: index 2
+
+  Difficulty: 6
+  Concepts: value-max, bet-sizing, range-advantage
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s516
+------------------------------------------------------------
+  Seed: 100008
+  Attempts: 1
+
+  Hero: Ad Kd
+  Board: 5d 4c 2s 2d
+
+  Classifications:
+    heroClass:  air
+    handIntent: combo_draw
+    turnType:   paired_turn
+    nodeIntent: semi_bluff
+
+  Options: check | bet 50% | bet 75%
+  Frequencies: 0.30 | 0.45 | 0.25
+  Best: index 1
+
+  Difficulty: 8
+  Concepts: high-equity-combo-draw, range-advantage, barrel-geometry
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s517
+------------------------------------------------------------
+  Seed: 100009
+  Attempts: 1
+
+  Hero: Qs Qh
+  Board: 8c 5d 2h 3s
+
+  Classifications:
+    heroClass:  strong_value
+    handIntent: made_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 33% | bet 50%
+  Frequencies: 0.45 | 0.40 | 0.15
+  Best: index 2
+
+  Difficulty: 6
+  Concepts: value-max, bet-sizing, range-advantage
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s518
+------------------------------------------------------------
+  Seed: 100010
+  Attempts: 1
+
+  Hero: Tc 2c
+  Board: 5d 4c 2s 2d
+
+  Classifications:
+    heroClass:  monster
+    handIntent: made_value
+    turnType:   paired_turn
+    nodeIntent: value
+
+  Options: check | bet 33% | bet 50%
+  Frequencies: 0.35 | 0.45 | 0.20
+  Best: index 2
+
+  Difficulty: 6
+  Concepts: value-max, bet-sizing, range-advantage
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+------------------------------------------------------------
+SPOT: s519
+------------------------------------------------------------
+  Seed: 100011
+  Attempts: 1
+
+  Hero: Js 4s
+  Board: 9d 4c 2s 3s
+
+  Classifications:
+    heroClass:  medium
+    handIntent: thin_value
+    turnType:   straight_completer
+    nodeIntent: value
+
+  Options: check | bet 25% | bet 33%
+  Frequencies: 0.50 | 0.35 | 0.15
+  Best: index 2
+
+  Difficulty: 7
+  Concepts: protection-bet
+
+  Validation: ✓ PASS
+------------------------------------------------------------
+
+============================================================
+GENERATION SUMMARY
+============================================================
+  Total generated: 12
+  Passed: 12
+  Failed: 0
+  ID range: s508 - s519
+============================================================

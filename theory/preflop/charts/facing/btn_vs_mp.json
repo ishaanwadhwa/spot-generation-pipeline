@@ -1,0 +1,29 @@
+{
+  "matchup": "btn_vs_mp",
+  "description": "Button defending vs MP open — MP opens tighter than CO, BTN responds with mixed 3bet strategy.",
+  "theory": "MP's range is between UTG and CO. BTN 3bets premium hands, calls suited connectors and pairs, and 3bets some suited aces as bluffs.",
+  "hands": {
+    "3bet_small": [
+      "QQ", "JJ", "TT",
+      "AQs", "AJs",
+      "KQs", "KJs"
+    ],
+    "3bet_big": [
+      "AA", "KK", "AKs",
+      "A5s", "A4s"
+    ],
+    "call": [
+      "22-99",
+      "A2s-ATs",
+      "KTs-KQs",
+      "QTs-QJs",
+      "JTs",
+      "T9s",
+      "98s", "87s"
+    ],
+    "fold": [
+      "72o", "62o", "J3o", "T4o", "Q4o"
+    ]
+  }
+}
+

@@ -1,0 +1,12 @@
+{
+  "matchup": "bb_vs_sb",
+  "description": "Big blind defending vs small blind open: wide defense range since SB opens wide and BB closes action.",
+  "theory": "SB opens very wide; BB defends liberally with calls and 3bets. Many marginal hands can be defended given pot odds and position advantage.",
+  "hands": {
+    "3bet_small": ["TT-QQ", "AJs+", "KQs"],
+    "3bet_big": ["AA", "KK", "AKs", "AKo"],
+    "call": ["22-99", "A2s-ATs", "K2s-KJs", "Q6s+", "J7s+", "T7s+", "97s+", "86s+", "75s+", "65s", "54s", "A2o-ATo", "KTo+", "QTo+", "JTo"],
+    "fold": ["72o", "83o", "94o", "32o"]
+  }
+}
+

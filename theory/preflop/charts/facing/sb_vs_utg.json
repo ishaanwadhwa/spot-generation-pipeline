@@ -1,0 +1,18 @@
+{
+  "matchup": "sb_vs_utg",
+  "description": "SB facing UTG open — very tight defense, mostly 3-bet or fold, occasional cold-call with suited hands.",
+  "theory": "SB faces the tightest opening range in 6-max. Cold-calling is often suboptimal due to OOP play, so SB's flat range is narrow. 3-betting is preferred with strong hands.",
+  "call": {
+    "pairs": ["77", "88", "99", "TT"],
+    "suited": ["ATs", "AJs", "KQs", "QJs", "JTs", "T9s"],
+    "offsuit": [],
+    "notes": "Cold-calling OOP vs UTG is marginal. Only very playable suited hands or pairs that don't want to 3-bet."
+  },
+  "threeBet": {
+    "pairs": ["JJ+", "QQ+", "KK", "AA"],
+    "suited": ["AKs", "AQs"],
+    "offsuit": ["AKo"],
+    "notes": "Strong 3-bet range for value. Bluff 3-bets rare vs UTG."
+  }
+}
+
